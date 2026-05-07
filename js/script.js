@@ -20,6 +20,7 @@ windows.forEach(win => {
 
     titleBar.addEventListener('mousedown', (e) => {
         isDragging = true;
+        document.body.classList.add('dragging');
         
         // Fix: Convert bottom/right positioning to top/left to prevent stretching
         const rect = win.getBoundingClientRect();
@@ -40,8 +41,11 @@ windows.forEach(win => {
     });
 
     document.addEventListener('mouseup', () => {
-        isDragging = false;
-        titleBar.style.cursor = 'grab';
+        if (isDragging) {
+            isDragging = false;
+            document.body.classList.remove('dragging');
+            titleBar.style.cursor = 'grab';
+        }
     });
 });
 
