@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rial on Sol - System v1.0</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts for retro feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background GIF for Matrix effect -->
+    <div id="matrix-bg-gif"></div>
+    
+    <!-- CRT Overlays -->
+    <div class="crt-overlay"></div>
+    <div class="glitch-overlay"></div>
+    <div class="noise-overlay"></div>
+
+    <div id="desktop">
+        <div class="desktop-icons">
+            <div class="icon">
+                <img src="https://img.icons8.com/color/48/000000/my-computer.png" alt="My Computer">
+                <span>My Computer</span>
+            </div>
+            <div class="icon">
+                <img src="https://img.icons8.com/color/48/000000/recycle-bin.png" alt="Recycle Bin">
+                <span>Real Rial</span>
+            </div>
+            <div class="icon">
+                <img src="img/coin.png" alt="Rial Coin">
+                <span>Rial_v1.0</span>
+            </div>
+        </div>
+
+        <!-- Hero Window -->
+        <div class="window draggable active" id="window-hero" style="top: 25%; left: 30%; width: 450px; z-index: 200;">
+            <div class="title-bar">
+                <div class="title-bar-text">Rial on Sol - System v1.0</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <img src="img/giphy.gif" class="hero-video-bg" alt="Hero Background">
+                <h1 class="wordart neon">Rial on Sol</h1>
+                <div class="hero-content">
+                    <img src="img/RIAL_1.png" alt="Rial Mascot" class="mascot floating">
+                    <p class="caption">Rial is no more real</p>
+                    <p class="subtitle blinking">NOW IS BETTER</p>
+                </div>
+                <div class="status-bar">
+                    <p class="status-bar-field">Status: BACKED BY VIBES</p>
+                    <p class="status-bar-field">v1.0.420</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Devaluation Window -->
+        <div class="window draggable" id="window-devaluation" style="top: 15%; left: 55%; width: 300px; z-index: 180;">
+            <div class="title-bar">
+                <div class="title-bar-text">IRR DEVALUATION TRACKER</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <div class="counter-container">
+                    <div class="counter-label">1 USD =</div>
+                    <div id="irr-counter" class="counter-value">[42,500,000,000]</div>
+                    <div class="counter-label">IRR</div>
+                </div>
+                <div class="devaluation-content">
+                    <div class="speech-bubble">¡SO LOW IT'S LAUGHABLE!</div>
+                    <img src="img/cry.png" alt="Cry Art" class="sad-coin">
+                </div>
+                <p class="sarcastic-copy">The world record for low vibes.</p>
+                <div class="vibe-meter">
+                    <div class="vibe-label">VALOR</div>
+                    <div class="vibe-bar">
+                        <div class="vibe-fill" style="width: 15%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Connect Window -->
+        <div class="window draggable" id="window-connect" style="top: 80%; left: 10%; width: 250px; z-index: 170;">
+            <div class="title-bar">
+                <div class="title-bar-text">NETWORK_CONNECTIONS.EXE</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <div class="connect-buttons">
+                    <a href="#" class="retro-btn">
+                        <img src="https://img.icons8.com/color/48/000000/telegram-app.png" alt="Telegram">
+                        <span>[telegram]</span>
+                    </a>
+                    <a href="#" class="retro-btn">
+                        <img src="https://img.icons8.com/ios-filled/50/000000/x.png" alt="X">
+                        <span>[x]</span>
+                    </a>
+                    <a href="#" class="retro-btn">
+                        <img src="https://img.icons8.com/color/48/000000/code.png" alt="Dex">
+                        <span>[dexcoode]</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terminal Window -->
+        <div class="window draggable" id="window-terminal" style="top: 85%; left: 38%; width: 280px; z-index: 160;">
+            <div class="title-bar">
+                <div class="title-bar-text">TERMINAL_OUTPUT.BAT</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body terminal-body">
+                <div class="terminal-text">
+                    <p>[EXEC] VIBE_CHECK.SH...</p>
+                    <p>[STATUS] LOW VIBES DETECTED</p>
+                    <p>[HODL] ACTIVE</p>
+                    <p class="cursor-line">_</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- HODL Progress Window -->
+        <div class="window draggable" id="window-hodl" style="top: 20%; left: 18%; width: 200px; z-index: 150;">
+            <div class="title-bar">
+                <div class="title-bar-text">SYSTEM STATUS</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <img src="img/you.png" alt="System Status Art" style="width: 100%; image-rendering: pixelated; margin-bottom: 5px;">
+                <p>HODL PROGRESS</p>
+                <div class="progress-container">
+                    <div class="progress-bar" id="hodl-progress"></div>
+                </div>
+                <p class="progress-text">Vibes: CRITICAL</p>
+            </div>
+        </div>
+
+        <!-- Vibe Check Window -->
+        <div class="window draggable" id="window-vibe" style="top: 65%; left: 68%; width: 180px; z-index: 140;">
+            <div class="title-bar">
+                <div class="title-bar-text">VIBE CHECK</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <div class="vibe-control">
+                    <img src="https://img.icons8.com/ios-filled/50/000000/speaker.png" alt="Volume" class="pixel-icon">
+                    <input type="range" min="0" max="100" value="80" class="retro-slider">
+                </div>
+                <div class="vibe-visualizer">
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+        <!-- Image Windows 1-6 -->
+        <div class="window draggable" id="window-img-1" style="top: 55%; left: 20%; width: 180px; z-index: 130;">
+            <div class="title-bar">
+                <div class="title-bar-text">GALLERY_01.BMP</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <img src="img/1.png" alt="Gallery 1" class="gallery-img">
+            </div>
+        </div>
+
+        <div class="window draggable" id="window-img-2" style="top: 12%; left: 45%; width: 200px; z-index: 120;">
+            <div class="title-bar">
+                <div class="title-bar-text">GALLERY_02.BMP</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <img src="img/2.png" alt="Gallery 2" class="gallery-img">
+            </div>
+        </div>
+
+        <div class="window draggable" id="window-img-3" style="top: 55%; left: 58%; width: 180px; z-index: 110;">
+            <div class="title-bar">
+                <div class="title-bar-text">GALLERY_03.BMP</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <img src="img/3.png" alt="Gallery 3" class="gallery-img">
+            </div>
+        </div>
+
+        <div class="window draggable" id="window-img-4" style="top: 45%; left: 62%; width: 200px; z-index: 100;">
+            <div class="title-bar">
+                <div class="title-bar-text">GALLERY_04.BMP</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <img src="img/4.png" alt="Gallery 4" class="gallery-img">
+            </div>
+        </div>
+
+        <div class="window draggable" id="window-img-6" style="top: 8%; left: 32%; width: 180px; z-index: 105;">
+            <div class="title-bar">
+                <div class="title-bar-text">GALLERY_06.BMP</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <img src="img/6.png" alt="Gallery 6" class="gallery-img">
+            </div>
+        </div>
+
+        <!-- Vibe Levels Window -->
+        <div class="window draggable" id="window-vibe-levels" style="top: 84%; left: 60%; width: 220px; z-index: 115;">
+            <div class="title-bar">
+                <div class="title-bar-text">CRITICAL VIBE LEVELS</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <div class="progress-container">
+                    <div class="progress-bar" id="vibe-levels-progress"></div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/script.js"></script>
+</body>
+</html>
