@@ -646,6 +646,43 @@ body.dragging * {
     display: block;
 }
 
+/* --- Notepad Styles --- */
+.notepad-body {
+    padding: 2px !important;
+    background: white !important;
+}
+
+.notepad-body textarea {
+    width: 100%;
+    height: 300px;
+    border: none;
+    outline: none;
+    font-family: 'Courier Prime', 'Courier New', monospace;
+    font-size: 12px;
+    resize: none;
+    background: white;
+    color: black;
+    padding: 5px;
+    line-height: 1.4;
+}
+
+/* Scrollbar styling for Notepad */
+.notepad-body textarea::-webkit-scrollbar {
+    width: 16px;
+}
+
+.notepad-body textarea::-webkit-scrollbar-track {
+    background: var(--win-grey);
+    box-shadow: inset 1px 1px 0 0 var(--win-black), inset -1px -1px 0 0 var(--win-white);
+}
+
+.notepad-body textarea::-webkit-scrollbar-thumb {
+    background: var(--win-grey);
+    border: 1px solid;
+    border-color: var(--win-white) var(--win-dark-grey) var(--win-dark-grey) var(--win-white);
+    box-shadow: inset -1px -1px 0 0 var(--win-black);
+}
+
 /* Mobile Adjustments */
 @media (max-width: 600px) {
     body, html {

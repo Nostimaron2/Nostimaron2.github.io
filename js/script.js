@@ -100,8 +100,8 @@ closeButtons.forEach(btn => {
         const win = e.target.closest('.window');
         win.style.display = 'none';
         
-        // Sarcastic alert sometimes when closing
-        if (Math.random() > 0.1) {
+        // Sarcastic alert sometimes when closing (except for Roadmap)
+        if (win.id !== 'window-roadmap' && Math.random() > 0.1) {
             setTimeout(() => {
                 alert("SYSTEM ERROR: CANNOT ESCAPE THE VIBES.");
                 win.style.display = 'flex';
@@ -135,3 +135,35 @@ function addTerminalLine() {
 }
 
 setInterval(addTerminalLine, 3000);
+
+// Roadmap Icon Logic
+const roadmapIcon = document.getElementById('icon-roadmap');
+const roadmapWindow = document.getElementById('window-roadmap');
+
+if (roadmapIcon && roadmapWindow) {
+    roadmapIcon.addEventListener('click', () => {
+        // Move to just after the desktop icons (crucial for mobile stacking)
+        const desktop = document.getElementById('desktop');
+        const desktopIcons = document.querySelector('.desktop-icons');
+        if (desktopIcons && desktopIcons.nextSibling) {
+            desktop.insertBefore(roadmapWindow, desktopIcons.nextSibling);
+        } else {
+            desktop.appendChild(roadmapWindow);
+        }
+        
+        roadmapWindow.style.display = 'flex';
+        
+        // Centering logic (only really affects desktop absolute positioning)
+        const winWidth = roadmapWindow.offsetWidth || 350;
+        const winHeight = roadmapWindow.offsetHeight || 400;
+        roadmapWindow.style.top = (window.innerHeight / 2 - winHeight / 2) + 'px';
+        roadmapWindow.style.left = (window.innerWidth / 2 - winWidth / 2) + 'px';
+        
+        // Ensure it's on top by picking a value higher than any inline style (like 200)
+        highestZ = Math.max(highestZ, 250) + 1;
+        roadmapWindow.style.zIndex = highestZ;
+        
+        windows.forEach(w => w.classList.remove('active'));
+        roadmapWindow.classList.add('active');
+    });
+}
